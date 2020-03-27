@@ -42,12 +42,11 @@ class Api::V1::VeiculosController < Api::V1::ApiController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_veiculo
       @veiculo = Veiculo.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def veiculo_params
       params.require(:veiculo).permit(:marca, :modelo, :ano, :descricao, :vendido)
     end
