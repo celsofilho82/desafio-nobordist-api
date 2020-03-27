@@ -1,4 +1,4 @@
-# Desafio: Nobordist
+# Desafio Nobordist
 
 Passos necessários para executar a aplicação:
 
@@ -6,7 +6,7 @@ Passos necessários para executar a aplicação:
 
 * Versão do Rails 5.2.4.2
 
-* Dependẽncias
+* Dependências
 
   - Sqlite (banco de dados para o Active Record)
   - Devise (Prove autenticação)
@@ -179,7 +179,7 @@ Requisições para a API devem seguir os padrões:
             {
               "status": 404,
               "error": "Not Found",
-              "exception": "#<ActiveRecord::RecordNotFound: Couldn't find veiculo with 'id'=2>"
+              "exception": "Couldn't find veiculo with 'id'=2>"
             }
 
 
@@ -228,7 +228,7 @@ Requisições para a API devem seguir os padrões:
             {
               "status": 404,
               "error": "Not Found",
-              "exception": "#<ActiveRecord::RecordNotFound: Couldn't find veiculo with 'id'=1>"
+              "exception": "Couldn't find veiculo with 'id'=1>"
             }
 
 + Response 401 (application/json) - Não tem autorização ou credencias não foram enviadas.
@@ -271,7 +271,7 @@ Requisições para a API devem seguir os padrões:
             {
               "status": 404,
               "error": "Not Found",
-              "exception": "#<ActiveRecord::RecordNotFound: Couldn't find veiculo with 'id'=1>"
+              "exception": "Couldn't find veiculo with 'id'=1>"
             }
 
 + Response 401 (application/json) - Não tem autorização ou credencias não foram enviadas.
