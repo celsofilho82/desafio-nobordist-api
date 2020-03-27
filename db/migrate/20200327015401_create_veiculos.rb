@@ -5,8 +5,7 @@ class CreateVeiculos < ActiveRecord::Migration[5.2]
       t.string :veiculo
       t.integer :ano
       t.text :descricao
-      t.string :vendido
-      t.string :boolean
+      t.boolean :vendido
 
       t.timestamps
     end

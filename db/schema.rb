@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_015401) do
     t.string "veiculo"
     t.integer "ano"
     t.text "descricao"
-    t.string "vendido"
-    t.string "boolean"
+    t.boolean "vendido"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
