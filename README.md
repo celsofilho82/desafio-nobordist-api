@@ -101,11 +101,11 @@ Requisições para a API devem seguir os padrões:
 
 + Attributes (object)
 
-    + marca: Fabricante do veiculo (string, required)
-    + veiculo: Modelo do veiculo (string, required)
-    + ano: Ano de fabricação do veiculo (integer, required)
+    + **marca**: Fabricante do veiculo (string, **required**)
+    + **modelo**: Modelo do veiculo (string, **required**)
+    + **ano**: Ano de fabricação do veiculo (integer, **required**)
     + descrição: Uma descrição para este veiculo (string, optional)
-    + vendido: true para veiculo vendido false caso contrário (boolean, optional)
+    + vendido: **true** para veiculo vendido ou **false** para disponível (boolean, optional)
 
 + Request (application/json)
 
