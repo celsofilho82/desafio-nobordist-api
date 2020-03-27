@@ -35,7 +35,11 @@ class Api::V1::VeiculosController < Api::V1::ApiController
 
   # DELETE /api/v1/veiculos/1
   def destroy
-    @veiculo.destroy
+    if @veiculo.destroy
+      render :nothing => true, status: :no_content
+    else
+      render json: @veiculo.errors, status: :unprocessable_entity
+    end
   end
 
   private
