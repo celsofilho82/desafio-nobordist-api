@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_012702) do
+ActiveRecord::Schema.define(version: 2020_03_27_015401) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2020_03_27_012702) do
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "veiculos", force: :cascade do |t|
+    t.string "marca"
+    t.string "veiculo"
+    t.integer "ano"
+    t.text "descricao"
+    t.string "vendido"
+    t.string "boolean"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
