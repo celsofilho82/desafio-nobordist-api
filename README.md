@@ -1,27 +1,26 @@
 # Desafio: Nobordist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Passos necessários para executar a aplicação:
 
-Things you may want to cover:
+* Versão do Ruby 2.6.5
 
-* Ruby version
+* Versão do Rails 5.2.4.2
 
-* System dependencies
+* Dependẽncias
 
-* Configuration
+  - Sqlite (banco de dados para o Active Record)
+  - Devise (Prove autenticação)
+  - Devise Simple Token (Extensão do Devise para gerenciar tokens de autenticação)
+  - Faker (Usado para popular o banco de dados)
 
-* Database creation
+* Instruções para deploy
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  - git clone https://github.com/celsofilho82/desafio-nobordist-api.git
+  - cd desafio-nobordist-api
+  - bundle install
+  - rails db:create db:migrate db:seed
+  - rails s
+  - API disponível no endereço http://localhost:3000/api/v1/veiculos
 
 # Detalhes do Desafio
 
@@ -33,7 +32,7 @@ Monte uma base de veículo com a seguinte estrutura:
 
     id: PK
     marca: string
-    veiculo: string
+    modelo: string
     ano: integer
     descricao: text
     vendido: bool
@@ -42,17 +41,15 @@ Monte uma base de veículo com a seguinte estrutura:
 
 API Endpoints:
 
-    GET/veiculos: Retorna todos os veículos
-    GET/veiculos/{id}: Retorna os detalhes de um veículo específico
-    POST/veiculos: Adiciona um novo veículo
-    PUT/veiculos/{id}: Atualiza os dados de um veículo
-    DELETE/veiculos/{id}: Apaga o veículo
+    GET /veiculos: Retorna todos os veículos
+    GET /veiculos/{id}: Retorna os detalhes de um veículo específico
+    POST /veiculos: Adiciona um novo veículo
+    PUT /veiculos/{id}: Atualiza os dados de um veículo
+    DELETE /veiculos/{id}: Apaga o veículo
 
-# Implementação
+# Detahes da implementação
 
-    host: localhost:3000
-    basePath: /api/v1
-    schemes: http
+    URL: http://localhost:3000/api/v1/veiculos
 
 ## Métodos
 Requisições para a API devem seguir os padrões:
@@ -186,7 +183,7 @@ Requisições para a API devem seguir os padrões:
             }
 
 
-### Editar (Update) [PATCH  /veiculos/{codigo}]
+### Editar (Update) [PATCH /veiculos/{codigo}]
 
 + Usuário deve enviar suas credencias para realizar tal ação.
 
@@ -245,7 +242,7 @@ Requisições para a API devem seguir os padrões:
           ]
 
 
-### Remover (Delete) [DELETE  /veiculos/{codigo}]
+### Remover (Delete) [DELETE /veiculos/{codigo}]
 
 + Usuário deven enviar suas credencias para realizar tal ação.
 
