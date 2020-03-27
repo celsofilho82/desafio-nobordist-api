@@ -9,7 +9,7 @@ Passos necessários para executar a aplicação:
 * Dependências
 
   - Sqlite (banco de dados para o Active Record)
-  - Devise (Prove autenticação)
+  - Devise (Prover autenticação para a API)
   - Devise Simple Token (Extensão do Devise para gerenciar tokens de autenticação)
   - Faker (Usado para popular o banco de dados)
 
@@ -56,8 +56,8 @@ Requisições para a API devem seguir os padrões:
 | Método | Descrição |
 |---|---|
 | `GET` | Retorna informações de um ou mais veiculos. |
-| `POST` | Utilizado para criar um novo veiculo. |
-| `PATCH` | Atualiza total ou parcial os dados de um veiculo. |
+| `POST` | Utilizado para cadastrar um novo veiculo. |
+| `PATCH` | Atualiza total ou parcial os dados de cadastro de um veiculo. |
 | `DELETE` | Remove o registro de um veiculo. |
 
 
@@ -97,7 +97,7 @@ Requisições para a API devem seguir os padrões:
 
 ### Novo (Create) [POST]
 
-+ Usuário deve enviar suas credencias para realizar tal ação.
++ **Usuário deve enviar suas credencias para realizar essa ação**.
 
 + Attributes (object)
 
@@ -116,7 +116,6 @@ Requisições para a API devem seguir os padrões:
 
     + Body
 
-
           {
             "marca": "Toyota",
             "modelo": "Corolla",
@@ -125,11 +124,10 @@ Requisições para a API devem seguir os padrões:
             "vendido": false
           }
 
-+ Response 203 (application/json) - Todos os dados do veiculo criado
++ Response 203 (application/json) - Todos os dados do veiculo cadastrado.
 
     + Body
 
-          [
             {
               "id": 2
               "marca": "Toyota",
@@ -138,9 +136,8 @@ Requisições para a API devem seguir os padrões:
               "descrição": "Branco, 4 portas, automático",
               "vendido": false
             }
-          ]
 
-+ Response 401 (application/json) - Não tem autorização ou credencias não foram enviadas.
++ Response 401 (application/json) - Credencias não foram informadas.
 
     + Body
 
@@ -162,7 +159,6 @@ Requisições para a API devem seguir os padrões:
 
     + Body
 
-
           {
             "id": 2
             "marca": "Toyota",
@@ -172,7 +168,7 @@ Requisições para a API devem seguir os padrões:
             "vendido": false
           }
 
-+ Response 404 (application/json) - Veiculo não for encontrado.
++ Response 404 (application/json) - Veiculo não encontrado.
 
     + Body
 
@@ -185,7 +181,7 @@ Requisições para a API devem seguir os padrões:
 
 ### Editar (Update) [PATCH /veiculos/{codigo}]
 
-+ Usuário deve enviar suas credencias para realizar tal ação.
++ **Usuário deve enviar suas credencias para realizar essa ação**.
 
 + Parameters
     + codigo (required, number, `1`) ... Código do veiculo
@@ -198,19 +194,15 @@ Requisições para a API devem seguir os padrões:
                 X-User-Token: f5o-xRK7fRcSiN4HpMJs
 
     + Body
-
-            [
+    
               {
                 "veiculo": "Etios Sedan",
               }
-            ]
-
 
 + Response 200 (application/json) - Todos os dados do veiculo alterado.
 
     + Body
 
-            [
               {
                 "id": 1
                 "marca": "Toyota",
@@ -219,7 +211,6 @@ Requisições para a API devem seguir os padrões:
                 "descrição": "Prata, 4 portas, manual",
                 "vendido": true
               }
-            ]
 
 + Response 404 (application/json) - Veiculo não encontrado.
 
@@ -231,7 +222,7 @@ Requisições para a API devem seguir os padrões:
               "exception": "Couldn't find veiculo with 'id'=1>"
             }
 
-+ Response 401 (application/json) - Não tem autorização ou credencias não foram enviadas.
++ Response 401 (application/json) - Credencias não foram informadas.
 
     + Body
 
@@ -244,7 +235,7 @@ Requisições para a API devem seguir os padrões:
 
 ### Remover (Delete) [DELETE /veiculos/{codigo}]
 
-+ Usuário deven enviar suas credencias para realizar tal ação.
++ **Usuário deven enviar suas credencias para realizar essa ação**.
 
 + Request (application/json)
 
@@ -274,7 +265,7 @@ Requisições para a API devem seguir os padrões:
               "exception": "Couldn't find veiculo with 'id'=1>"
             }
 
-+ Response 401 (application/json) - Não tem autorização ou credencias não foram enviadas.
++ Response 401 (application/json) - Credencias não foram informadas.
 
     + Body
 
