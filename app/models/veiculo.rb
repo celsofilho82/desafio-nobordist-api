@@ -1,3 +1,3 @@
 class Veiculo < ApplicationRecord
-  validates :marca, :veiculo, :ano, presence: true
+  validates :marca, :modelo, :ano, presence: true
 end

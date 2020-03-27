@@ -16,7 +16,6 @@ class Api::V1::VeiculosController < Api::V1::ApiController
   # POST /api/v1/veiculos
   def create
     @veiculo = Veiculo.new(veiculo_params)
-
     if @veiculo.save
       render json: @veiculo, status: :created
     else
@@ -50,7 +49,7 @@ class Api::V1::VeiculosController < Api::V1::ApiController
 
     # Only allow a trusted parameter "white list" through.
     def veiculo_params
-      params.require(:veiculo).permit(:marca, :veiculo, :ano, :descricao, :vendido)
+      params.require(:veiculo).permit(:marca, :modelo, :ano, :descricao, :vendido)
     end
 
 end

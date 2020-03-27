@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_015401) do
 
   create_table "veiculos", force: :cascade do |t|
     t.string "marca"
-    t.string "veiculo"
+    t.string "modelo"
     t.integer "ano"
     t.text "descricao"
     t.boolean "vendido"

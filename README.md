@@ -72,7 +72,7 @@ Requisições para a API devem seguir os padrões:
 | `203` | Registro criado com sucesso (success).|
 | `401` | Dados de acesso inválidos. (Unauthorized)|
 | `404` | Registro pesquisado não encontrado (Not found).|
-
+| `422` | Não foi possível processar as instruções presentes. (Unprocessable Entity).|
 
 # Recurso
 
@@ -90,7 +90,7 @@ Requisições para a API devem seguir os padrões:
           {
             "id": 1
             "marca": "Toyota",
-            "veiculo": "Etios",
+            "modelo": "Etios",
             "ano": 2018,
             "descrição": "Prata, 4 portas, manual",
             "vendido": true
@@ -112,7 +112,7 @@ Requisições para a API devem seguir os padrões:
 
 + Request (application/json)
 
-    + Headers
+    + Headers (Utilize as credencias abaixo)
 
             X-User-Email: user@user.com
             X-User-Token: f5o-xRK7fRcSiN4HpMJs
@@ -122,7 +122,7 @@ Requisições para a API devem seguir os padrões:
 
           {
             "marca": "Toyota",
-            "veiculo": "Corolla",
+            "modelo": "Corolla",
             "ano": 2020,
             "descrição": "Branco, 4 portas, automático",
             "vendido": false
@@ -136,7 +136,7 @@ Requisições para a API devem seguir os padrões:
             {
               "id": 2
               "marca": "Toyota",
-              "veiculo": "Corolla",
+              "modelo": "Corolla",
               "ano": 2020,
               "descrição": "Branco, 4 portas, automático",
               "vendido": false
@@ -169,7 +169,7 @@ Requisições para a API devem seguir os padrões:
           {
             "id": 2
             "marca": "Toyota",
-            "veiculo": "Corolla",
+            "modelo": "Corolla",
             "ano": 2020,
             "descrição": "Branco, 4 portas, automático",
             "vendido": false
@@ -195,7 +195,7 @@ Requisições para a API devem seguir os padrões:
 
 + Request (application/json)
 
-    + Headers
+    + Headers (Utilize as credencias abaixo)
 
                 X-User-Email: user@user.com
                 X-User-Token: f5o-xRK7fRcSiN4HpMJs
@@ -217,7 +217,7 @@ Requisições para a API devem seguir os padrões:
               {
                 "id": 1
                 "marca": "Toyota",
-                "veiculo": "Etios Sedan",
+                "modelo": "Etios Sedan",
                 "ano": 2018,
                 "descrição": "Prata, 4 portas, manual",
                 "vendido": true
@@ -256,7 +256,7 @@ Requisições para a API devem seguir os padrões:
 
 + Request (application/json)
 
-    + Headers
+    + Headers (Utilize as credencias abaixo)
 
                 X-User-Email: user@user.com
                 X-User-Token: f5o-xRK7fRcSiN4HpMJs
